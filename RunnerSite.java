@@ -41,17 +41,14 @@ public class RunnerSite {
 		//Teste5 Valide se o produto foi corretamente adicionado ao carrinho e prossiga caso esteja tudo certo
 		rolatela.executeScript("window.scrollBy(0,200)");
 		driver.findElement(By.xpath("//a[@title='Proceed to checkout']")).click();		
-		
 		rolatela.executeScript("window.scrollBy(0,600)");
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//*[@id='center_column']/p[2]/a[1]")).click();
-		
+		driver.findElement(By.xpath("//*[@id='center_column']/p[2]/a[1]")).click();		
 		//Teste6 Realizar o cadastro do cliente preenchendo todos os campos obrigatórios dos formulários
-		
 		Thread.sleep(5000);
 		rolatela.executeScript("window.scrollBy(0,300)");
 		driver.findElement(By.id("email_create")).click();
-		driver.findElement(By.id("email_create")).sendKeys("teste2024@teste.com");
+		driver.findElement(By.id("email_create")).sendKeys("teste2042@teste.com");
 		driver.findElement(By.id("SubmitCreate")).click();
 		Thread.sleep(5000);
 		driver.findElement(By.id("id_gender1")).click();
@@ -75,41 +72,32 @@ public class RunnerSite {
 		driver.findElement(By.id("phone")).sendKeys("1123452345");
 		driver.findElement(By.id("phone_mobile")).sendKeys("1123452345");
 		driver.findElement(By.id("submitAccount")).click();
-		
-		
+		Thread.sleep(3000);
+		rolatela.executeScript("window.scrollBy(0,450)");
 		//Teste7 Valide se o endereço está correto e prossiga
-		
-			
-		//address_delivery = 218 W Centre St, 49 apartment, Baltimore, MD
-		
-	
+		Thread.sleep(5000);
+		rolatela.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//*[@id='center_column']/form/p/button")).click();		
+		Thread.sleep(2000);
+		rolatela.executeScript("window.scrollBy(0,500)");
 		//Teste8 Aceite os termos de serviço e prossiga.
-		//Thread.sleep(5000);
-		//driver.findElement(By.id("uniform-addressesAreEquals")).click();
-		//rolatela.executeScript("window.scrollBy(0,800)");
-		//Thread.sleep(2000);
-		//driver.findElements(By.name("processAddress"));
-		//Thread.sleep(2000);
-		//rolatela.executeScript("window.scrollBy(0,800)");
-		//driver.findElement(By.id("uniform-cgv")).click();
-		//Thread.sleep(2000);
-		//driver.findElements(By.name("processCarrier"));
-		
+		driver.findElement(By.id("cgv")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='form']/p/button")).click();		
 		//Teste9 Valide o valor total da compra.
+		rolatela.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(2000);
 		//Teste10 Selecione um método de pagamento e prossiga.
-		//rolatela.executeScript("window.scrollBy(0,800)");
-		//Thread.sleep(2000);
-		//driver.findElement(By.xpath("//a[@title='Pay by bank wire']")).click();
-		//Thread.sleep(2000);
-		//rolatela.executeScript("window.scrollBy(0,800)");		
-		//driver.findElement(By.("submit")).click();
-		//driver.findElement(By.xpath("//i[@id='cart_navigation']")).click();
-		//Thread.sleep(5000);
-		//*[@id="cart_navigation"]/button
+		driver.findElement(By.xpath("//*[@id='HOOK_PAYMENT']/div[1]/div/p/a")).click();		
+		rolatela.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(3000);				
+		driver.findElement(By.xpath("//*[@id='cart_navigation']/button")).click();
 		//teste11 Confirme a compra e valide se foi finalizada com sucesso.
+		rolatela.executeScript("window.scrollBy(0,500)");	
+		Thread.sleep(20000);
 		
-		
-	}
+		}
 	
 	@After
 	public void teardown() throws Exception{
